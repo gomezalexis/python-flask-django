@@ -1,0 +1,18 @@
+h1{
+    color: green;
+}
+
+h2{
+    color: orangered;
+}
+
+li{
+    font-size: 22px;
+}
+
+form{
+    margin: 10px;
+}
+input[type='text']{
+    margin: 20px;
+}
