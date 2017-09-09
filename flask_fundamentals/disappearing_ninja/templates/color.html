@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Ninjas</title>
+</head>
+<body>
+    {% if turtle == 'red' %}
+        <img src="{{url_for('static', filename='images/raphael.jpg')}}" alt="Raphael">
+
+    {% elif turtle == 'purple' %}
+        <img src="{{url_for('static', filename='images/donatello.jpg')}}" alt="Donatello">
+
+    {% elif turtle == 'orange' %}
+        <img src="{{url_for('static', filename='images/michelangelo.jpg')}}" alt="Michelangelo">
+
+    {% elif turtle == 'blue' %}
+        <img src="{{url_for('static', filename='images/leonardo.jpg')}}" alt="Leonardo">
+
+    {% else %}
+        <img src="{{url_for('static', filename='images/notapril.jpg')}}" alt="April">
+        
+    {% endif %}
+
+
+</body>
+</html>
