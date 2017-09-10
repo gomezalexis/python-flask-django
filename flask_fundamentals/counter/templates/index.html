@@ -1,0 +1,19 @@
+<html>
+    <head>
+      <title>Counter</title>
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    </head>
+    <body>
+      <h1>This is Counter:</h1>
+      <h3>{{session['count']}}</h3>
+      <h3>{{email}}</h3>
+      <form action='/number'>
+        <input type="submit" value="2+">
+      </form>
+      <form action="/reset">
+        <input type="submit" value="reset">
+      </form>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="{{url_for('static', filename='js/the_script.js')}}" type="text/javascript"></script>
+    </body>
+  </html>
