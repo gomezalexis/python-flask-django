@@ -30,7 +30,7 @@ def process():
     elif pass_confirmation != password:
         flash("Password doesn't match!")
     else:
-        session['success'] = "Great! Everything was validated"
+        flash("Great! Everything was validated")
 
     
     return redirect('/')

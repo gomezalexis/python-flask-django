@@ -5,15 +5,19 @@
 </head>
 <body>
     <h1>Enter a Valid(Any) Name!</h1>
-    <div id="errors">
+    <div>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
-            <p>{{message}}</p>
+                {% if message == "Great! Everything was validated"%}
+                <p id="validated">{{message}}</p>
+                {% else%}
+                <p id="errors">{{message}}</p>
+                {% endif %}
             {% endfor %}
         {% endif %}
     {% endwith %}    
-    <p id="validated">{{session['success']}}</p>
+    <!-- <p id="validated">{{session['success']}}</p> -->
     </div>    
     <form action='/process' method='POST'>
         Name: <input type="text" name="first_name"><br>
