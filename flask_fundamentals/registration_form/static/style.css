@@ -1,0 +1,15 @@
+#errors{
+    background-color: #D79595;
+    color: #F50808;
+    font-weight: bold;
+}
+
+input{
+    margin: 10px;
+}
+
+#validated{
+    background-color: #BDE0BD;
+    color: black;
+    
+}
