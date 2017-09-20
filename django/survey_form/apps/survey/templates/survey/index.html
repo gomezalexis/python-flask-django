@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>The Survey</title>
+</head>
+<body>
+    <h1>This is survey</h1>
+    <form action="/survey/process/" method="post">
+        {% csrf_token %}
+        Your name: <input type="text" name="name"><br><br>
+        Dojo Location: <select name="location">
+            <option value="seattle">Seattle</option>
+            <option>Chicago</option>
+            <option value="dallas">Dallas</option>
+            <option>San Jose</option>
+            <option>Tulsa</option>
+        </select>
+        <br><br>
+        Favorite Language: <select name="language">
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="javascript">JavaScript</option>
+            <option value="C-Sharp">C#</option>
+            <option>Swift</option>
+        </select>
+        <p>Comment (optional):</p> <br>
+        <textarea name="comment" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="Submit here">
+    </form>
+</body>
+</html>

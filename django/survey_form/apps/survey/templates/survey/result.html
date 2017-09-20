@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Survey - Result</title>
+</head>
+<body>
+    <div id="counter">You have submitted the form {{request.session.counter}} time now!</div>
+    <h1>The submitted information</h1>
+    <ul>
+        <li><span>Name:</span> {{request.session.name}}</li>
+        <li><span>Favorite Location:</span> {{request.session.location}}</li>
+        <li><span>Favorite Language:</span> {{request.session.language}}</li>
+        <li><span>Comments:</span> {{request.session.comment}}</li>
+    </ul>
+</body>
+</html>
