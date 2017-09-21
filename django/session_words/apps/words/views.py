@@ -14,15 +14,12 @@ def index(request):
 
 def add_word(request):
     if request.method == "POST":
-        request.session['word'] = request.POST['word']
-        request.session['color'] = request.POST['color']
         if not 'bold' in request.POST:  #request.POST['bold']
             request.session['bold'] = "style=font-size:16px"
 
         else:
             request.session['bold'] = request.POST['bold']
-            
-        request.session['time'] = strftime("%b %d, %Y %I:%M %p")  
+
         new_word = {
             "word": request.POST['word'],
             "color": request.POST['color'],
