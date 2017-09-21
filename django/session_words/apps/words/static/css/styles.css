@@ -1,0 +1,41 @@
+h1{
+    color: #DC47D6;
+    background-color: pink;
+}
+
+#inputarea{
+    
+    display: inline-block;
+    width: 260px;
+}
+.big{
+    font-weight: bold;
+}
+
+input[value="Add to Session"]{
+    background-color: #E8C2E8;
+    width: 140px;
+    height: 40px;
+}
+
+input[value="Clear Session"]{
+    width: 140px;
+    height: 40px;
+    background-color: #E0A6A6;
+    display: block;
+    margin-left: 318px;
+}
+
+input[type="text"]{
+    width: 200px;
+}
+
+#posts{
+    display: inline-block;
+    /* border: 2px dashed orangered; */
+    width: 500px;
+    /* height: 200px; */
+    vertical-align: top;
+    border: 2px solid black;
+    border-style: none none none solid;
+}

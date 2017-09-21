@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>The words</title>
+</head>
+<body>
+    <h1>Session Words</h1>
+    <div id="inputarea">
+        <h2>Add a new word</h2>
+        <form action="/add_word/" method="post">
+            {% csrf_token %}
+            <input type="text" name="word"><br>
+            <p>Choose color:</p>
+            <input type="radio" name="color" value="red">Red<br>
+            <input type="radio" name="color" value="green">Green<br>
+            <input type="radio" name="color" value="blue">Blue<br>
+            <input type="radio" name="color" value="black" checked hidden>
+            <br>
+            <input type="checkbox" name="bold" value='style=font-size:28px'>Show in <span class="big">BIG</span> fonts!<br>
+            <!-- <input type="checkbox" name="bold" value='style=font-size:16px' checked hidden> -->
+
+            <br>
+            <input type="submit" value="Add to Session">
+        </form>
+    </div>
+    <div id="posts">
+        <form action="/clear/">
+            {% csrf_token %}
+            <input type="submit" value="Clear Session">
+        </form>
+        <div id="newwords">
+            {% for word in request.session.all_words reversed%}
+            <p {{word.bold}}><font color="{{word.color}}">{{word.word}}</font> - {{word.time}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
