@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books and Authors</title>
+</head>
+<body>
+    <h1>Books and Authors</h1>
+    {% for book in books %}
+    <h2>{{book}}</h2>
+    <h3>{{ book.authors.all }}</h3>
+    {% endfor %}
+</body>
+</html>
