@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Dojo Ninjas</title>
+</head>
+<body>
+    <h1>The Dojo Ninjas App</h1>
+    {% for dojo in dojos %}
+    <h2>{{dojo}}</h2>
+    <h3>City: {{dojo.desc}}</h3>
+    <p>Description: {{dojo.desc}}</p>
+    {% endfor %}
+</body>
+</html>
