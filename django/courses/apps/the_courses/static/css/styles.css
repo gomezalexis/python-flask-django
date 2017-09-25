@@ -1,0 +1,24 @@
+h1{
+    color: purple;
+}
+
+.to_remove{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#the_delete{
+    background-color: #EA9797;
+    margin: 0px 10px;
+    border: 2px solid black;
+    padding: 12px;
+}
+
+#delform{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.error_message{
+    background-color: #E57777;
+}

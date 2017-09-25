@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>The Courses</title>
+</head>
+<body>
+    <h1>Add a new Course</h1>
+    <form action="/the_courses/add_course/" method="post">
+        {% csrf_token %} 
+        Name: <input type="text" name="name"><br><br>
+        Difficulty Description: <select name="the_level" id="">
+            {% for lev in levels %}
+            <option value="{{lev.id}}">{{lev.level}}</option>
+            {% endfor %}
+        </select><br><br>
+        <input type="submit" value="Add">
+    </form><br>
+    <div class="error_message">
+        {% for m in messages %}
+            <p>{{m.tags}}: {{m}}</p>
+        {% endfor %}
+    </div>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for n in courses %}
+        <tr>
+            <td>{{n.name}}</td>
+            <td><a href="/the_courses/{{n.the_level.id}}/description/">{{n.the_level.level}}</a></td>
+            <td>{{n.created_at}}</td>
+            <td><a href="/the_courses/destroy/{{n.id}}/">remove</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
